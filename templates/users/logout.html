@@ -1,0 +1,25 @@
+{% extends 'base_generic.html' %}
+
+{% block title %}Logged Out{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-6">
+                <div class="card shadow-sm">
+                    <div class="card-body text-center">
+                        <h4>You have successfully logged out.</h4>
+                        <p>Redirecting you to the login page...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Redirection -->
+    <script type="text/javascript">
+        setTimeout(function() {
+            window.location.href = "{% url 'users-login' %}";  // Redirect to the login page
+        }, 2000);  // Delay for 2 seconds before redirection
+    </script>
+{% endblock %}
